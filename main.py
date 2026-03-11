@@ -36,6 +36,8 @@ class VitalsInput(BaseModel):
     temperature:      float = Field(default=0)
     spo2:             float = Field(default=0)
     respiratory_rate: float = Field(default=0)
+    history:          Optional[list] = Field(default=[])
+    is_initial:       bool = Field(default=False)
 
 class AnalysisResult(BaseModel):
     patient_code: str; is_anomaly: bool; severity: str
